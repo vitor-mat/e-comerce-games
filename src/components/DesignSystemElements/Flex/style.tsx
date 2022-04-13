@@ -10,4 +10,6 @@ export const Flex = styled.div<FlexType>`
   display: flex;
   align-items: ${({ alignItems}) => alignItems};
   justify-content: ${({ justifyContent }) => justifyContent};
+  flex-wrap: wrap;
+  gap: 50px;
 `

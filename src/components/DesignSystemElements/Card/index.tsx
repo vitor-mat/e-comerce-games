@@ -2,17 +2,23 @@ import React from 'react';
 
 import * as S from './style';
 
-export const Card: React.FC = () => {
+interface PropsType{
+  imgSrc: string;
+  titleCard: string;
+  priceCard: number;
+}
+
+export const Card: React.FC<PropsType> = ({ imgSrc, titleCard, priceCard }) => {
   return(
     <S.Container>
       <S.ImageContainer>
-        <img src="" alt="" />
+        <img src={imgSrc} alt="image card" />
       </S.ImageContainer>
       <S.CardTItle>
-        Terra Média: Sombras de Mordor
+        {titleCard}
       </S.CardTItle>
       <S.CardPrice>
-        R$ 79.99
+        R$ {priceCard}
       </S.CardPrice>
     </S.Container>
   )

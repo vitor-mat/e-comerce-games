@@ -1,5 +1,7 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
+import type { NextPage } from 'next';
+import Head from 'next/head';
+
+import React from 'react';
 
 import { FullScreenContainer } from '../components/DesignSystemElements/FullScreenContainer';
 import { Header } from '../components/DesignSystemElements/Header';
@@ -7,7 +9,10 @@ import { Flex } from '../components/DesignSystemElements/Flex';
 import { Main } from '../components/DesignSystemElements/Main';
 import { Card } from '../components/DesignSystemElements/Card';
 
+import dataGames from '../database/games.json';
+
 const Home: NextPage = () => {
+
   return (
     <FullScreenContainer>
       <Head>
@@ -21,7 +26,16 @@ const Home: NextPage = () => {
           alignItems="center"
           justifyContent="center"
         >
-          <Card />
+          {dataGames.map(dataGames => {
+            return(
+              <Card 
+                key={dataGames.id}
+                imgSrc={dataGames.image}
+                titleCard={dataGames.name}
+                priceCard={dataGames.price}
+              />
+            )
+          })}
         </Flex>
       </Main>
     </FullScreenContainer>
