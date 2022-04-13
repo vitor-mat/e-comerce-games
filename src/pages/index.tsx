@@ -2,6 +2,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 
 import { Header } from '../components/DesignSystemElements/Header';
+import { Flex } from '../components/DesignSystemElements/Flex';
 import { Card } from '../components/DesignSystemElements/Card';
 
 const Home: NextPage = () => {
@@ -13,7 +14,12 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <Card />
+      <Flex
+        alignItems="center"
+        justifyContent="center"
+      >
+        <Card />
+      </Flex>
     </div>
   )
 }
