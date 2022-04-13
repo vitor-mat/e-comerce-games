@@ -5,7 +5,7 @@ export const Container = styled.div`
   min-height: 300px;
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 7px;
   cursor: pointer;
   position: relative;
 `
@@ -44,4 +44,10 @@ export const BuyButton = styled.button`
   position: absolute;
   bottom: 0;
   left: 0;
+  cursor: pointer;
+  transition: linear .3s;
+
+  &:active{
+    opacity: .7;
+  }
 `
