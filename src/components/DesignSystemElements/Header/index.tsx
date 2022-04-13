@@ -8,7 +8,7 @@ import { Logo } from '../Logo';
 
 export const Header: React.FC = () => {
   return(
-    <S.Header>
+    <S.Header id="header">
       <S.MaxWidthSection>
         <Logo />
         <Link href="/">

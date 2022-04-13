@@ -16,7 +16,9 @@ export const Footer: React.FC = () => {
           justifyContent="space-between"
         >
           <Logo />
-          <S.ArrowUpIcon src="/arrow-down-icon.svg" alt="arrow-down-icon" />
+          <a href="#header">
+            <S.ArrowUpIcon src="/arrow-down-icon.svg" alt="arrow-down-icon" />
+          </a>
         </Flex>
         <Flex
           alignItems="center"
