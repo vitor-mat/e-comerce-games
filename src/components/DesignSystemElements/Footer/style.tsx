@@ -37,12 +37,6 @@ export const Hr = styled.hr`
   margin: 10px 0 20px; 
 `
 
-export const Logo = styled.h1`
-    color: white;
-    font-weight: 700;
-    font-size: 40px;
-`
-
 export const ArrowUpIcon = styled.img`
   transform: rotateZ(180deg);
   width: 55px;

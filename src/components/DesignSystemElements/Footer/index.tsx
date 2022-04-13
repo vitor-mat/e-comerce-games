@@ -5,6 +5,7 @@ import React from 'react';
 import * as S from './style';
 
 import { Flex } from '../Flex';
+import { Logo } from '../Logo';
 
 export const Footer: React.FC = () => {
   return (
@@ -14,9 +15,7 @@ export const Footer: React.FC = () => {
           alignItems="center"
           justifyContent="space-between"
         >
-          <S.Logo>
-            Supera
-          </S.Logo>
+          <Logo />
           <S.ArrowUpIcon src="/arrow-down-icon.svg" alt="arrow-down-icon" />
         </Flex>
         <Flex

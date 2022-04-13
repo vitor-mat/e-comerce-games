@@ -4,11 +4,13 @@ import React from 'react';
 
 import * as S from './style';
 
+import { Logo } from '../Logo';
+
 export const Header: React.FC = () => {
   return(
     <S.Header>
       <S.MaxWidthSection>
-        <h1>Supera</h1>
+        <Logo />
         <Link href="/">
           <a>Loja</a>
         </Link>
