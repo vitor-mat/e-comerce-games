@@ -4,6 +4,7 @@ import Head from 'next/head'
 import { FullScreenContainer } from '../components/DesignSystemElements/FullScreenContainer';
 import { Header } from '../components/DesignSystemElements/Header';
 import { Flex } from '../components/DesignSystemElements/Flex';
+import { Main } from '../components/DesignSystemElements/Main';
 import { Card } from '../components/DesignSystemElements/Card';
 
 const Home: NextPage = () => {
@@ -15,12 +16,14 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <Flex
-        alignItems="center"
-        justifyContent="center"
-      >
-        <Card />
-      </Flex>
+      <Main>
+        <Flex
+          alignItems="center"
+          justifyContent="center"
+        >
+          <Card />
+        </Flex>
+      </Main>
     </FullScreenContainer>
   )
 }
