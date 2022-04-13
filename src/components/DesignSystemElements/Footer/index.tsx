@@ -20,20 +20,14 @@ export const Footer: React.FC = () => {
             <S.ArrowUpIcon src="/arrow-down-icon.svg" alt="arrow-down-icon" />
           </a>
         </Flex>
-        <Flex
-          alignItems="center"
-          justifyContent="flex-end"
-        >
-          <S.LanguageContainer>
+        <S.LanguageContainer>
+          <S.LanguageItem>
             <img src="/globe_icon.svg" alt="globe icon"/>
             <span>País/Região: Brasil</span>
-          </S.LanguageContainer>
-        </Flex>
+          </S.LanguageItem>
+        </S.LanguageContainer>
         <S.Hr />
-        <Flex
-          alignItems="flex-end"
-          justifyContent="space-between"
-        >
+        <S.MidiasAndTermsContainer>
           <S.SocialMidiaContainer>
             <img src="/instagram_icon.svg" alt="instagram icon"/>
             <img src="/facebook_icon.svg" alt="facebook icon"/>
@@ -43,7 +37,7 @@ export const Footer: React.FC = () => {
             <span>Termos de serviço</span>
             <span>Politica de privacidade</span>
           </S.TermsContainer>
-        </Flex>
+        </S.MidiasAndTermsContainer>
       </S.MaxWidthSection>
     </S.Footer>
   )

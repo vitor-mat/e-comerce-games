@@ -7,13 +7,25 @@ export const Logo = styled.div`
     gap: 10px;
     cursor: pointer;
     text-decoration: none;
-  img{
-    width: 50px;
-    margin-top: 10px;
+    img{
+      width: 50px;
+      margin-top: 10px;
+    }
+    h1{
+      font-size: 32px;
+      color: white;
+    }
   }
-  h1{
-    font-size: 32px;
-    color: white;
-  }
+
+  
+  @media(max-width: 310px){
+    a{
+      img{
+        width: 40px;
+      }
+      h1{
+        font-size: 24px;
+      }
+    }
   }
 `

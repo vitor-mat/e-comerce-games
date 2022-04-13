@@ -7,6 +7,16 @@ export const Footer = styled.footer`
   background: ${props => props.theme.colors.main};
 `
 
+export const ArrowUpIcon = styled.img`
+  transform: rotateZ(180deg);
+  width: 55px;
+  cursor: pointer;
+
+  @media(max-width: 310px){
+    width: 40px;
+  }
+`
+
 export const MaxWidthSection = styled.div`
   width: 100%;
   max-width: 1440px;
@@ -18,18 +28,35 @@ export const MaxWidthSection = styled.div`
 `
 
 export const LanguageContainer = styled.div`
-  display flex;
+  width: 100%;
+  display: flex;
   align-items: center;
   justify-content: flex-end;
+
+  @media(max-width: 310px){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+`
+
+export const LanguageItem = styled.div`
+  display flex;
+  align-items: center;
   gap: 10px;
   color: white;
   font-weight: 700;
   font-size: 20px;
   border-radius: 10px;
   margin: 5px 0px;
-  width: 300px;
   img{
     width: 30px;
+  }
+  @media(max-width: 310px){
+    font-size: 16px;
+    img{
+      width: 20px;
+    }
   }
 `
 
@@ -37,10 +64,19 @@ export const Hr = styled.hr`
   margin: 10px 0 20px; 
 `
 
-export const ArrowUpIcon = styled.img`
-  transform: rotateZ(180deg);
-  width: 55px;
-  cursor: pointer;
+export const MidiasAndTermsContainer = styled.div`
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  @media(max-width: 480px){
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+        
 `
 
 export const SocialMidiaContainer = styled.div`
@@ -65,5 +101,13 @@ export const TermsContainer = styled.div`
 
   span:hover{
     text-decoration: underline;
+  }
+
+  @media(max-width: 320px){
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
   }
 `
