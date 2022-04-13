@@ -20,6 +20,9 @@ export const Card: React.FC<PropsType> = ({ imgSrc, titleCard, priceCard }) => {
       <S.CardPrice>
         R$ {priceCard}
       </S.CardPrice>
+      <S.BuyButton>
+        Comprar
+      </S.BuyButton>
     </S.Container>
   )
 }

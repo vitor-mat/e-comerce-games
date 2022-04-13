@@ -7,6 +7,7 @@ export const Container = styled.div`
   flex-direction: column;
   gap: 5px;
   cursor: pointer;
+  position: relative;
 `
 
 export const ImageContainer = styled.div`
@@ -23,9 +24,24 @@ export const ImageContainer = styled.div`
 export const CardTItle = styled.span`
   width: 100%;
   font-weight: 500;
+  text-align: center;
 `
 
 export const CardPrice = styled.span`
   width: 100%;
   font-weight: 500;
+  text-align: center;
+`
+
+export const BuyButton = styled.button`
+  background: ${props => props.theme.colors.main};
+  color: white;
+  font-weight: 700;
+  width: 100%;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 `
