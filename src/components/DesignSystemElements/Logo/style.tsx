@@ -1,9 +1,12 @@
 import styled from 'styled-components';
 
 export const Logo = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  a{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    text-decoration: none;
   img{
     width: 50px;
     margin-top: 10px;
@@ -11,5 +14,6 @@ export const Logo = styled.div`
   h1{
     font-size: 32px;
     color: white;
+  }
   }
 `
