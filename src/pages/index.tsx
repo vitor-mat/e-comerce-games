@@ -8,6 +8,7 @@ import { Header } from '../components/DesignSystemElements/Header';
 import { Flex } from '../components/DesignSystemElements/Flex';
 import { Main } from '../components/DesignSystemElements/Main';
 import { Card } from '../components/DesignSystemElements/Card';
+import { Footer } from '../components/DesignSystemElements/Footer';
 
 import dataGames from '../database/games.json';
 
@@ -38,6 +39,7 @@ const Home: NextPage = () => {
           })}
         </Flex>
       </Main>
+      <Footer />
     </FullScreenContainer>
   )
 }
