@@ -7,7 +7,7 @@ import * as S from './style';
 export const NavegationCart = () => {
   return(
     <S.Container>
-      <Link href="#">
+      <Link href="/cart">
         <a>
           <span>Carrinho</span>
           <img src="/cart-icon-black.svg" alt="cart icon" />
