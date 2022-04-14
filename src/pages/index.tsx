@@ -4,9 +4,8 @@ import Head from 'next/head';
 import React from 'react';
 
 import { FullScreenContainer } from '../components/DesignSystemElements/FullScreenContainer';
-import { Grid } from '../components/DesignSystemElements/Grid';
-import { GridItem } from '../components/DesignSystemElements/GridItem';
 import { Header } from '../components/DesignSystemElements/Header';
+import { NavegationCart } from '../components/NavegationCart';
 import { Flex } from '../components/DesignSystemElements/Flex';
 import { Main } from '../components/DesignSystemElements/Main';
 import { Card } from '../components/DesignSystemElements/Card';
@@ -25,6 +24,7 @@ const Home: NextPage = () => {
       </Head>
         <Header />
         <Main>
+          <NavegationCart />
           <Flex
             alignItems="center"
             justifyContent="center"
