@@ -46,9 +46,6 @@ const Games: NextPage<PropsType> = ({ ids }) => {
 
   const [myGame, setMyGame] = React.useState(dataGames.find(data => data.routerForGamePage == ids) || dataGames[0])
 
-  React.useEffect(() => {
-    console.log(dataGames.find(data => data.routerForGamePage == ids))
-  }, [])
   return(
     <FullScreenContainer> 
       <Header />
@@ -59,6 +56,7 @@ const Games: NextPage<PropsType> = ({ ids }) => {
           imgSrc={myGame.image}
           plataform={myGame.plataform}
           score={myGame.score}
+          price={myGame.price}
         />
       </Main> 
       <Footer />

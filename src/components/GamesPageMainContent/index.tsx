@@ -10,9 +10,10 @@ interface PropsType{
   imgSrc: string;
   plataform: string;
   score: number;
+  price: number
 }
 
-export const GamesPageMainContent: React.FC<PropsType> = ({ name, imgSrc, plataform, score }) => {
+export const GamesPageMainContent: React.FC<PropsType> = ({ name, imgSrc, plataform, score, price }) => {
   return(
     <S.Container>
       <Flex
@@ -34,6 +35,8 @@ export const GamesPageMainContent: React.FC<PropsType> = ({ name, imgSrc, plataf
           >
             Adicionar ao carrinho
           </Button>
+          <span>Preço: R${price}</span>
+          <hr />
           <span>Plataforma: {plataform}</span>
           <hr />
           <span>Score: {score}</span>
