@@ -5,7 +5,8 @@
     "price": 197.88,
     "score": 100,
     "image": "/super-mario-odyssey.png",
-    "routerForGamePage": "super-mario-odyssey"
+    "routerForGamePage": "super-mario-odyssey",
+    "plataform": "Switch"
   },
   {
     "id": 201,
@@ -13,7 +14,8 @@
     "price": 49.99,
     "score": 80,
     "image": "/call-of-duty-infinite-warfare.png",
-    "routerForGamePage": "call-of-duty-infinite-warfare"
+    "routerForGamePage": "call-of-duty-infinite-warfare",
+    "plataform": "Ps4"
   },
   {
     "id": 102,
@@ -21,7 +23,8 @@
     "price": 119.5,
     "score": 250,
     "image": "/the-witcher-iii-wild-hunt.png",
-    "routerForGamePage": "the-witcher-iii-wild-hunt"
+    "routerForGamePage": "the-witcher-iii-wild-hunt",
+    "plataform": "Ps4"
   },
   {
     "id": 99,
@@ -29,7 +32,8 @@
     "price": 249.99,
     "score": 205,
     "image": "/call-of-duty-wwii.png",
-    "routerForGamePage": "call-of-duty-wwii"
+    "routerForGamePage": "call-of-duty-wwii",
+    "plataform": "Ps4"
   },
   {
     "id": 12,
@@ -37,7 +41,8 @@
     "price": 69.99,
     "score": 150,
     "image": "/mortal-kombat-xl.png",
-    "routerForGamePage": "mortal-kombat-xl"
+    "routerForGamePage": "mortal-kombat-xl",
+    "plataform": "Ps4"
   },
   {
     "id": 74,
@@ -45,7 +50,8 @@
     "price": 71.94,
     "score": 400,
     "image": "/shards-of-darkness.png",
-    "routerForGamePage": "shards-of-darkness"
+    "routerForGamePage": "shards-of-darkness",
+    "plataform": "Ps4"
   },
   {
     "id": 31,
@@ -53,7 +59,8 @@
     "price": 79.99,
     "score": 50,
     "image": "/terra-media-sombras-de-mordor.png",
-    "routerForGamePage": "terra-media-sombras-de-mordor"
+    "routerForGamePage": "terra-media-sombras-de-mordor",
+    "plataform": "Ps4"
   },
   {
     "id": 420,
@@ -61,7 +68,8 @@
     "price": 195.39,
     "score": 325,
     "image": "/fifa-18.png",
-    "routerForGamePage": "fifa-18"
+    "routerForGamePage": "fifa-18",
+    "plataform": "Ps4"
   },
   {
     "id": 501,
@@ -69,6 +77,7 @@
     "price": 115.8,
     "score": 290,
     "image": "/horizon-zero-dawn.png",
-    "routerForGamePage": "horizon-zero-dawn"
+    "routerForGamePage": "horizon-zero-dawn",
+    "plataform": "Ps4"
   }
 ]

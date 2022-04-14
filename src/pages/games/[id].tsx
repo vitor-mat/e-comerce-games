@@ -4,6 +4,13 @@ import React from 'react';
 
 import dataGames from "../../database/games.json";
 
+import { FullScreenContainer } from '../../components/DesignSystemElements/FullScreenContainer';
+import { Header } from '../../components/DesignSystemElements/Header';
+import { Main } from '../../components/DesignSystemElements/Main';
+import { NavegationCart } from '../../components/NavegationCart';
+import { GamesPageMainContent } from '../../components/GamesPageMainContent';
+import { Footer } from '../../components/DesignSystemElements/Footer';
+
 export const getStaticPaths: GetStaticPaths = async () => {
 
   const paths = dataGames.map(data => {
@@ -27,7 +34,7 @@ export const getStaticProps: GetStaticProps = async (context: any) => {
   return {
     props: {
       ids
-    }, // will be passed to the page component as props
+    },
   }
 }
 
@@ -36,13 +43,26 @@ interface PropsType{
 }
 
 const Games: NextPage<PropsType> = ({ ids }) => {
+
+  const [myGame, setMyGame] = React.useState(dataGames.find(data => data.routerForGamePage == ids) || dataGames[0])
+
   React.useEffect(() => {
-    console.log(ids)
+    console.log(dataGames.find(data => data.routerForGamePage == ids))
   }, [])
   return(
-    <div> 
-      ola 
-    </div>
+    <FullScreenContainer> 
+      <Header />
+      <Main>
+        <NavegationCart />
+        <GamesPageMainContent 
+          name={myGame.name}
+          imgSrc={myGame.image}
+          plataform={myGame.plataform}
+          score={myGame.score}
+        />
+      </Main> 
+      <Footer />
+    </FullScreenContainer>
   )
 }
 
