@@ -36,6 +36,7 @@ const Home: NextPage = () => {
                   imgSrc={dataGames.image}
                   titleCard={dataGames.name}
                   priceCard={dataGames.price}
+                  buyRouter={dataGames.routerForGamePage}
                 />
               )
             })}
