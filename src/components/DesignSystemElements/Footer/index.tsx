@@ -34,8 +34,12 @@ export const Footer: React.FC = () => {
             <img src="/twitter_icon.svg" alt="twitter icon"/>
           </S.SocialMidiaContainer>
           <S.TermsContainer>
-            <span>Termos de serviço</span>
-            <span>Politica de privacidade</span>
+            <Link href="/service-terms">
+              <a>Termos de serviço</a>
+            </Link>
+            <Link href="#">
+              <a>Politica de privacidade</a>
+            </Link>
           </S.TermsContainer>
         </S.MidiasAndTermsContainer>
       </S.MaxWidthSection>

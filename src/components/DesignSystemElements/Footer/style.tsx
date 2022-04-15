@@ -93,13 +93,14 @@ export const TermsContainer = styled.div`
   display: flex;
   gap: 20px;
 
-  span{
+  a{
     color: white;
     cursor: pointer;
     font-size: 14px;
+    text-decoration: none;
   }
 
-  span:hover{
+  a:hover{
     text-decoration: underline;
   }
 
