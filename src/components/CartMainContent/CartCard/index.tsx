@@ -2,8 +2,6 @@ import React from 'react';
 
 import * as S from './style';
 
-import { Flex } from '../../DesignSystemElements/Flex';
-
 interface PropsType {
   imgSrc: string;
   title: string;

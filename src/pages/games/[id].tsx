@@ -29,22 +29,22 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async (context: any) => {
 
-  const ids = await context.params.id
+  const currentlyRouter = await context.params.id
 
   return {
     props: {
-      ids
+      currentlyRouter
     },
   }
 }
 
 interface PropsType{
-  ids: any;
+  currentlyRouter: string;
 }
 
-const Games: NextPage<PropsType> = ({ ids }) => {
+const Games: NextPage<PropsType> = ({ currentlyRouter }) => {
 
-  const [myGame, setMyGame] = React.useState(dataGames.find(data => data.routerForGamePage == ids) || dataGames[0])
+  const [myGame, setMyGame] = React.useState(dataGames.find(data => data.routerForGamePage == currentlyRouter) || dataGames[0])
 
   React.useEffect(() => {
 
@@ -61,6 +61,7 @@ const Games: NextPage<PropsType> = ({ ids }) => {
           plataform={myGame.plataform}
           score={myGame.score}
           price={myGame.price}
+          id={myGame.id}
         />
       </Main> 
       <Footer />

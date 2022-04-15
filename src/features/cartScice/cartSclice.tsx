@@ -3,18 +3,20 @@ import type { RootState } from '../../app/store';
 
 interface cartState{
   value: {
-    image: string;
-    name: string;
-    price: string;
-    amount: string;
+    id: number;
+    imgSrc: string;
+    title: string;
+    price: number;
+    amount: number;
   }[];
 }
 
 interface actionType{
-  image: string;
-  name: string;
-  price: string;
-  amount: string;
+  id: number;
+  imgSrc: string;
+  title: string;
+  price: number;
+  amount: number;
 }
 
 const initialState: cartState = {

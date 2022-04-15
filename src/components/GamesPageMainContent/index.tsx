@@ -4,6 +4,10 @@ import React from 'react';
 
 import * as S from './style';
 
+import { RootState } from '../../app/store';
+import { useSelector, useDispatch } from 'react-redux';
+import { addInTheCart } from '../../features/cartScice/cartSclice';
+
 import { Flex } from '../DesignSystemElements/Flex';
 
 interface PropsType{
@@ -11,13 +15,23 @@ interface PropsType{
   imgSrc: string;
   plataform: string;
   score: number;
-  price: number
+  price: number;
+  id: number;
 }
 
-export const GamesPageMainContent: React.FC<PropsType> = ({ name, imgSrc, plataform, score, price }) => {
+export const GamesPageMainContent: React.FC<PropsType> = ({ id, name, imgSrc, plataform, score, price }) => {
+
+  const myCart = useSelector((state: RootState) => state.cart.value);
 
   const [showLoading, setShowLoading] = React.useState(false)
-  const [isInTheCart, setIsInTheCart] = React.useState(false)
+  const [isInTheCart, setIsInTheCart] = React.useState(!!myCart.find(data => data.title == name))
+  const [cartItem, setCartItem] = React.useState({id: id, imgSrc: imgSrc, title: name, price: price, amount: 1})
+
+  const dispatch = useDispatch();
+
+  React.useEffect(() => {
+    console.log(myCart)
+  }, [myCart])
 
   const handleLoading = () => {
     if(isInTheCart == false){
@@ -51,7 +65,11 @@ export const GamesPageMainContent: React.FC<PropsType> = ({ name, imgSrc, plataf
             isInTheCart={isInTheCart}
             onClick={handleLoading}
           >
-            <span className="addInTheCart">Adicionar ao carrinho</span>
+            <span className="addInTheCart"
+              onClick={() => dispatch(addInTheCart(cartItem))}
+            >
+              Adicionar ao carrinho
+            </span>
             <Link href="/cart">
               <a className="seeInTheCart">Vizualizar no carrinho</a>
             </Link>
