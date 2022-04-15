@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 interface ButtonType{
-  maxWidth: string;
-  marginTop: number;
+  maxWidth?: string;
+  marginTop?: number;
   backgroundColor?: string;
   margin?: string;
 }

@@ -1,9 +1,10 @@
+import Link from 'next/link';
+
 import React from 'react';
 
 import * as S from './style';
 
 import { Flex } from '../DesignSystemElements/Flex';
-import { Button } from '../DesignSystemElements/Button';
 
 interface PropsType{
   name: string;
@@ -14,6 +15,20 @@ interface PropsType{
 }
 
 export const GamesPageMainContent: React.FC<PropsType> = ({ name, imgSrc, plataform, score, price }) => {
+
+  const [showLoading, setShowLoading] = React.useState(false)
+  const [isInTheCart, setIsInTheCart] = React.useState(false)
+
+  const handleLoading = () => {
+    if(isInTheCart == false){
+      setShowLoading(true)
+      setTimeout(() => {
+        setShowLoading(false)
+        setIsInTheCart(!isInTheCart)
+      }, 4000)
+    }
+  }
+
   return(
     <S.Container>
       <Flex
@@ -30,11 +45,18 @@ export const GamesPageMainContent: React.FC<PropsType> = ({ name, imgSrc, plataf
           <img src={imgSrc} alt="capa image"/>
         </div>
         <S.SideBar>
-          <Button
+          <S.AddToCartButton
             margin="0 0 10px"
+            showLoading={showLoading}
+            isInTheCart={isInTheCart}
+            onClick={handleLoading}
           >
-            Adicionar ao carrinho
-          </Button>
+            <span className="addInTheCart">Adicionar ao carrinho</span>
+            <Link href="/cart">
+              <a className="seeInTheCart">Vizualizar no carrinho</a>
+            </Link>
+            <div className="loadIcon"></div>
+          </S.AddToCartButton>
           <span>Preço: R${price}</span>
           <hr />
           <span>Plataforma: {plataform}</span>

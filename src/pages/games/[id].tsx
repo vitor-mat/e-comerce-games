@@ -46,6 +46,10 @@ const Games: NextPage<PropsType> = ({ ids }) => {
 
   const [myGame, setMyGame] = React.useState(dataGames.find(data => data.routerForGamePage == ids) || dataGames[0])
 
+  React.useEffect(() => {
+
+  })
+
   return(
     <FullScreenContainer> 
       <Header />
