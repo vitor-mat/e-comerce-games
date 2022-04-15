@@ -37,8 +37,8 @@ export const Footer: React.FC = () => {
             <Link href="/service-terms">
               <a>Termos de serviço</a>
             </Link>
-            <Link href="#">
-              <a>Politica de privacidade</a>
+            <Link href="/privacy-policy">
+              <a>Política de privacidade</a>
             </Link>
           </S.TermsContainer>
         </S.MidiasAndTermsContainer>
