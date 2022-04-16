@@ -18,10 +18,6 @@ export const CartMainContent: React.FC = () => {
     return (value.price * value.amount)
   })
 
-  React.useEffect(() => {
-    console.log(totalPriceParcial)
-  }, [myCart])
-
   const discount = 0.00
   
   const totalPriceFinal = totalPriceParcial.length ? totalPriceParcial.reduce((acumulator, currentValue) => {
@@ -34,15 +30,16 @@ export const CartMainContent: React.FC = () => {
       <S.CardsCartContainer>
         {myCart.map(data => {
           return(
-            <>
+            <React.Fragment
+              key={data.id}
+            >
               <CartCard 
-                key={data.id}
                 imgSrc={data.imgSrc}
                 title={data.title}
                 price={data.price}
               />
               <hr />
-            </>
+            </React.Fragment>
           )
         })}
       </S.CardsCartContainer>
