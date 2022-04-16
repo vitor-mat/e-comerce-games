@@ -35,6 +35,7 @@ export const GamesPageMainContent: React.FC<PropsType> = ({ id, name, imgSrc, pl
       setTimeout(() => {
         setShowLoading(false)
         setIsInTheCart(!isInTheCart)
+        dispatch(addInTheCart(cartItem))
       }, 4000)
     }
   }
@@ -61,7 +62,7 @@ export const GamesPageMainContent: React.FC<PropsType> = ({ id, name, imgSrc, pl
             isInTheCart={isInTheCart}
             onClick={handleLoading}
           >
-            <span className="addInTheCart" onClick={() => dispatch(addInTheCart(cartItem))}>
+            <span className="addInTheCart">
               Adicionar ao carrinho
             </span>
             <Link href="/cart">
