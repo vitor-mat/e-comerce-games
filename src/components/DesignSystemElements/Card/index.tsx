@@ -24,7 +24,7 @@ export const Card: React.FC<PropsType> = ({ imgSrc, titleCard, priceCard, buyRou
         `}
       </S.CardTItle>
       <S.CardPrice>
-        R$ {priceCard}
+        R$ {priceCard.toFixed(2).toString().replace(".", ",")}
       </S.CardPrice>
       <Link href={`/games/${buyRouter}`}>
         <a>

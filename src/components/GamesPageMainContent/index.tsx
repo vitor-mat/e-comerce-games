@@ -75,7 +75,7 @@ export const GamesPageMainContent: React.FC<PropsType> = ({ id, name, imgSrc, pl
             </Link>
             <div className="loadIcon"></div>
           </S.AddToCartButton>
-          <span>Preço: R${price}</span>
+          <span>Preço: R${price.toFixed(2).toString().replace(".", ",")}</span>
           <hr />
           <span>Plataforma: {plataform}</span>
           <hr />

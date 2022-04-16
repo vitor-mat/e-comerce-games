@@ -19,7 +19,7 @@ export const CartCard: React.FC<PropsType> = ({ imgSrc, title, price }) => {
       <S.CardDescriptionContainer>
         <S.HeaderCardDescription>
           <h2>{title}</h2>
-          <span>R${price}</span>
+          <span>R${price.toFixed(2).toString().replace(".", ",")}</span>
         </S.HeaderCardDescription>
         <S.AmountContainer>
           <label>Qtd:</label>
