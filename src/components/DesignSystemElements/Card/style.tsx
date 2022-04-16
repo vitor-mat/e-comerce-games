@@ -45,7 +45,10 @@ export const BuyButton = styled.button`
   bottom: 0;
   left: 0;
   cursor: pointer;
-  transition: linear .3s;
+
+  &:hover{
+    outline: 2px solid #5381f3;
+  }
 
   &:active{
     opacity: .7;

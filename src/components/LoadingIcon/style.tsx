@@ -21,4 +21,5 @@ export const LoadingIcon = styled.div<LoadingIconType>`
     to{ 
         transform: rotate(360deg); 
     } 
+  }
 `

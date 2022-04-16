@@ -19,13 +19,16 @@ export const Button = styled.button<ButtonType>`
   margin-top: ${({marginTop}) => marginTop}px;
   cursor: pointer;
   background: ${props => props.theme.colors.main};
-  transition: .1s linear;
   font-weight: 700;
   font-size: 16px;
   background: ${({backgroundColor}) => backgroundColor ? `${backgroundColor}` : ""};
   margin: ${({margin}) => margin ? `${margin}` : ""};
 
+  &:hover{
+    outline: 2px solid #5381f3;
+  }
+
   &:active{
-    opacity: 0.7;
+    opacity: .7;
   }
 `

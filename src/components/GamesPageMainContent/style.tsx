@@ -45,6 +45,14 @@ export const AddToCartButton = styled(Button)<AddToCartButtonType>`
   padding: 0;
   ${props => props.isInTheCart ? "background: #5381f3;" : ""}
 
+  &:hover{
+    outline: 2px solid #5381f3;
+  }
+
+  &:active{
+    opacity: .7;
+  }
+
   .loadIcon{
     width: 20px;
     height: 20px;
@@ -61,6 +69,10 @@ export const AddToCartButton = styled(Button)<AddToCartButtonType>`
     justify-content: center;
     width: 100%;
     height: 100%;
+
+    &:active{
+      opacity: .7;
+    }
   }
 
   .addInTheCart{
