@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import { Button } from '../DesignSystemElements/Button/style';
+
 export const Container = styled.div`
   width: 100%;
   display: grid;
@@ -62,4 +64,10 @@ export const CartSideBar = styled.div`
     font-size: 20px;
     margin-bottom: 10px;
   }
+`
+
+export const FinishOrderButton = styled(Button)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `

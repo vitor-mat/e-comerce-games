@@ -2,9 +2,9 @@ import React from 'react';
 
 import { RootState } from '../../app/store';
 import { useSelector, useDispatch } from 'react-redux';
-import { addInTheCart } from '../../features/cartScice/cartSclice';
+import { clearAllCart } from '../../features/cartScice/cartSclice';
 
-import { Button } from '../DesignSystemElements/Button';
+import { LoadingElement } from '../LoadingIcon';
 
 import { CartCard } from './CartCard';
 import { EmpytCart } from './EmptyCart';
@@ -15,8 +15,10 @@ import * as S from './style';
 export const CartMainContent: React.FC = () => {
 
   const myCart = useSelector((state: RootState) => state.cart.value);
+  const dispatch = useDispatch()
 
-  const [wasBouth, setWasBouth] = React.useState(true);
+  const [wasBouth, setWasBouth] = React.useState(false);
+  const [showLoading, setShowLoading] = React.useState(false)
 
   const totalPriceParcial = myCart.map(value => {
     return (value.price * value.amount)
@@ -27,6 +29,18 @@ export const CartMainContent: React.FC = () => {
   const totalPriceFinal = totalPriceParcial.length ? totalPriceParcial.reduce((acumulator, currentValue) => {
     return acumulator + currentValue
   }) : 0.00
+
+  const handleLoading = () => {
+    setShowLoading(true)
+    setTimeout(() => {
+      finishOrder()
+    }, 4000)
+  }
+
+  const finishOrder = () => {
+    setWasBouth(true)
+    dispatch(clearAllCart())
+  }
 
   return (
     myCart.length ? 
@@ -55,9 +69,12 @@ export const CartMainContent: React.FC = () => {
         <span>{`Desconto: R$ ${discount.toFixed(2).toString().replace(".", ",")}`}</span>
         <hr />
         <span className="subTotal">{`Subtotal: R$ ${(totalPriceFinal - discount).toFixed(2)}`}</span>
-        <Button>
-          Finalizar Pedido
-        </Button>
+        <S.FinishOrderButton onClick={handleLoading}>
+          {showLoading ? 
+            <LoadingElement showLoading={showLoading} /> :
+            <span>Finalizar Pedido</span>
+          }
+        </S.FinishOrderButton>
       </S.CartSideBar>
     </S.Container> 
     : wasBouth ?

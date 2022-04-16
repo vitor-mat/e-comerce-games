@@ -8,15 +8,15 @@ interface Props{
   maxWidth?: string;
   margin?: string;
   marginTop?: number;
-  onClickFunction?: () => void
+  onClick?: () => void
 }
 
-export const Button:React.FC<Props> = ({ children, maxWidth="100%", marginTop=0, onClickFunction, backgroundColor, margin }) => {
+export const Button:React.FC<Props> = ({ children, maxWidth="100%", marginTop=0, onClick, backgroundColor, margin }) => {
   return(
     <S.Button
       maxWidth={maxWidth}
       marginTop={marginTop}
-      onClick={onClickFunction}
+      onClick={onClick}
       backgroundColor={backgroundColor}
       margin={margin}
     >
