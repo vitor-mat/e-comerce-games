@@ -46,7 +46,6 @@ export const CartCard: React.FC<PropsType> = ({ imgSrc, title, price, amount }) 
       })
       dispatch(clearAllCart())
       dispatch(updateCartValue(cartDataCopy))
-      console.log(myCart)
     }
   }
 
@@ -62,8 +61,9 @@ export const CartCard: React.FC<PropsType> = ({ imgSrc, title, price, amount }) 
         <S.AmountContainer>
           <label>Qtd:</label>
           <select value={selectValue} onChange={e => {
+            console.log(e.target.value)
             setSelectValue(Number(e.target.value))
-            updateAmoutItensOfAGame(title, Number(selectValue))
+            updateAmoutItensOfAGame(title, e.target.value)
           }}>
             {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((value, index) => {
               return (
