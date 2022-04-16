@@ -1,6 +1,8 @@
 import React from 'react';
 
-import dataGames from '../../database/games.json';
+import { RootState } from '../../app/store';
+import { useSelector, useDispatch } from 'react-redux';
+import { addInTheCart } from '../../features/cartScice/cartSclice';
 
 import { CartCard } from './CartCard';
 import { Button } from '../DesignSystemElements/Button';
@@ -8,17 +10,20 @@ import { Button } from '../DesignSystemElements/Button';
 import * as S from './style';
 
 export const CartMainContent: React.FC = () => {
+
+  const myCart = useSelector((state: RootState) => state.cart.value);
+
   return(
     <S.Container>
       <h1>Meu Carrinho</h1>
       <S.CardsCartContainer>
-        {dataGames.map(data => {
+        {myCart.map(data => {
           return(
             <>
               <CartCard 
                 key={data.id}
-                imgSrc={data.image}
-                title={data.name}
+                imgSrc={data.imgSrc}
+                title={data.title}
                 price={data.price}
               />
               <hr />
