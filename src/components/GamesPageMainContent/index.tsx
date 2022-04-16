@@ -29,10 +29,6 @@ export const GamesPageMainContent: React.FC<PropsType> = ({ id, name, imgSrc, pl
 
   const dispatch = useDispatch();
 
-  React.useEffect(() => {
-    console.log(myCart)
-  }, [myCart])
-
   const handleLoading = () => {
     if(isInTheCart == false){
       setShowLoading(true)

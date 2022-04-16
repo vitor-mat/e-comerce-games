@@ -1,5 +1,9 @@
 import React from 'react';
 
+import { RootState } from '../../../app/store';
+import { useSelector, useDispatch } from 'react-redux';
+import { addInTheCart, clearAllCart, updateCartValue  } from '../../../features/cartScice/cartSclice';
+
 import * as S from './style';
 
 interface PropsType {
@@ -10,7 +14,19 @@ interface PropsType {
 
 export const CartCard: React.FC<PropsType> = ({ imgSrc, title, price }) => {
 
+  const myCart = useSelector((state: RootState) => state.cart.value);
+
   const [amount, setAmount] = React.useState<number | string>()
+
+  const dispatch = useDispatch()
+
+  const removeItemFromCart = (itemTitle: string) => {
+    if(myCart.length){
+      const remainigCartItems = myCart.filter((cartItem) => cartItem.title !== itemTitle)
+      dispatch(clearAllCart())
+      dispatch(updateCartValue(remainigCartItems))
+    }
+  }
 
   return (
     <S.Container>
@@ -35,7 +51,11 @@ export const CartCard: React.FC<PropsType> = ({ imgSrc, title, price }) => {
           </select>
         </S.AmountContainer>
         <S.RemoveContainer>
-          <S.RemoveElement>Remover</S.RemoveElement>
+          <S.RemoveElement
+            onClick={() => removeItemFromCart(title)}
+          >
+            Remover
+          </S.RemoveElement>
         </S.RemoveContainer>
       </S.CardDescriptionContainer>
     </S.Container>
