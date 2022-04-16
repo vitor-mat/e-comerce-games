@@ -8,6 +8,7 @@ import { Button } from '../DesignSystemElements/Button';
 
 import { CartCard } from './CartCard';
 import { EmpytCart } from './EmptyCart';
+import { ThanksForBuying } from './ThanksForBuying';
 
 import * as S from './style';
 
@@ -15,6 +16,7 @@ export const CartMainContent: React.FC = () => {
 
   const myCart = useSelector((state: RootState) => state.cart.value);
 
+  const [wasBouth, setWasBouth] = React.useState(true);
 
   const totalPriceParcial = myCart.map(value => {
     return (value.price * value.amount)
@@ -57,7 +59,9 @@ export const CartMainContent: React.FC = () => {
           Finalizar Pedido
         </Button>
       </S.CartSideBar>
-    </S.Container> :
+    </S.Container> 
+    : wasBouth ?
+    <ThanksForBuying /> :
     <EmpytCart />
   )
 }
