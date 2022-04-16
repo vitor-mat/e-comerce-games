@@ -4,8 +4,10 @@ import { RootState } from '../../app/store';
 import { useSelector, useDispatch } from 'react-redux';
 import { addInTheCart } from '../../features/cartScice/cartSclice';
 
-import { CartCard } from './CartCard';
 import { Button } from '../DesignSystemElements/Button';
+
+import { CartCard } from './CartCard';
+import { EmpytCart } from './EmptyCart';
 
 import * as S from './style';
 
@@ -19,21 +21,22 @@ export const CartMainContent: React.FC = () => {
   })
 
   const discount = 0.00
-  
+
   const totalPriceFinal = totalPriceParcial.length ? totalPriceParcial.reduce((acumulator, currentValue) => {
     return acumulator + currentValue
   }) : 0.00
 
-  return(
+  return (
+    myCart.length ? 
     <S.Container>
       <h1>Meu Carrinho</h1>
       <S.CardsCartContainer>
         {myCart.map((data, index) => {
-          return(
+          return (
             <React.Fragment
               key={data.id}
             >
-              <CartCard 
+              <CartCard
                 imgSrc={data.imgSrc}
                 title={data.title}
                 price={data.price}
@@ -54,6 +57,7 @@ export const CartMainContent: React.FC = () => {
           Finalizar Pedido
         </Button>
       </S.CartSideBar>
-    </S.Container>
+    </S.Container> :
+    <EmpytCart />
   )
 }
