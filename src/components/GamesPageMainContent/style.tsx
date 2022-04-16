@@ -42,6 +42,7 @@ export const AddToCartButton = styled(Button)<AddToCartButtonType>`
   align-items: center;
   justify-content: center;
   width: 200px;
+  padding: 0;
   ${props => props.isInTheCart ? "background: #5381f3;" : ""}
 
   .loadIcon{
@@ -55,14 +56,21 @@ export const AddToCartButton = styled(Button)<AddToCartButtonType>`
     display: ${props => props.showLoading ? "block" : "none"};
   }
 
+  .addInTheCart, .seeInTheCart{
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+
   .addInTheCart{
-    display: ${props => props.showLoading ? "none" : props.isInTheCart ? "none" : "inline-block"};
+    display: ${props => props.showLoading ? "none" : props.isInTheCart ? "none" : "flex"};
   }
 
   .seeInTheCart{
     color: white;
     text-decoration: none;
-    display: ${props => props.showLoading ? "none" : props.isInTheCart ? "inline-block" : "none"};
+    display: ${props => props.showLoading ? "none" : props.isInTheCart ? "flex" : "none"};
   }
 
   @keyframes spin { 

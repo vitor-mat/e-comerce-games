@@ -10,13 +10,14 @@ interface PropsType {
   imgSrc: string;
   title: string;
   price: number;
+  amount: number;
 }
 
-export const CartCard: React.FC<PropsType> = ({ imgSrc, title, price }) => {
+export const CartCard: React.FC<PropsType> = ({ imgSrc, title, price, amount }) => {
 
   const myCart = useSelector((state: RootState) => state.cart.value);
 
-  const [amount, setAmount] = React.useState<number | string>()
+  const [selectValue, setSelectValue] = React.useState<number>(amount)
 
   const dispatch = useDispatch()
 
@@ -25,6 +26,27 @@ export const CartCard: React.FC<PropsType> = ({ imgSrc, title, price }) => {
       const remainigCartItems = myCart.filter((cartItem) => cartItem.title !== itemTitle)
       dispatch(clearAllCart())
       dispatch(updateCartValue(remainigCartItems))
+    }
+  }
+
+  const updateAmoutItensOfAGame = (itemTitle: string, newAmount: number) => {
+
+    if(myCart.length){
+      const cartDataCopy = myCart.map(cartItem => {
+        if(cartItem.title === itemTitle){
+          return{
+            id: cartItem.id,
+            imgSrc: cartItem.imgSrc,
+            title: cartItem.title,
+            price: cartItem.price,
+            amount: newAmount
+          }
+        }
+        return cartItem
+      })
+      dispatch(clearAllCart())
+      dispatch(updateCartValue(cartDataCopy))
+      console.log(myCart)
     }
   }
 
@@ -39,9 +61,9 @@ export const CartCard: React.FC<PropsType> = ({ imgSrc, title, price }) => {
         </S.HeaderCardDescription>
         <S.AmountContainer>
           <label>Qtd:</label>
-          <select value={amount} onChange={e => {
-            setAmount(e.target.value)
-            console.log(e.target.value)
+          <select value={selectValue} onChange={e => {
+            setSelectValue(Number(e.target.value))
+            updateAmoutItensOfAGame(title, Number(selectValue))
           }}>
             {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((value, index) => {
               return (

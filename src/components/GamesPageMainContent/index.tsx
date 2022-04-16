@@ -61,9 +61,7 @@ export const GamesPageMainContent: React.FC<PropsType> = ({ id, name, imgSrc, pl
             isInTheCart={isInTheCart}
             onClick={handleLoading}
           >
-            <span className="addInTheCart"
-              onClick={() => dispatch(addInTheCart(cartItem))}
-            >
+            <span className="addInTheCart" onClick={() => dispatch(addInTheCart(cartItem))}>
               Adicionar ao carrinho
             </span>
             <Link href="/cart">

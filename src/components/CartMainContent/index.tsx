@@ -28,7 +28,7 @@ export const CartMainContent: React.FC = () => {
     <S.Container>
       <h1>Meu Carrinho</h1>
       <S.CardsCartContainer>
-        {myCart.map(data => {
+        {myCart.map((data, index) => {
           return(
             <React.Fragment
               key={data.id}
@@ -37,6 +37,7 @@ export const CartMainContent: React.FC = () => {
                 imgSrc={data.imgSrc}
                 title={data.title}
                 price={data.price}
+                amount={data.amount}
               />
               <hr />
             </React.Fragment>
