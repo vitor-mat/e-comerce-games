@@ -13,6 +13,21 @@ export const CartMainContent: React.FC = () => {
 
   const myCart = useSelector((state: RootState) => state.cart.value);
 
+
+  const totalPriceParcial = myCart.map(value => {
+    return (value.price * value.amount)
+  })
+
+  React.useEffect(() => {
+    console.log(totalPriceParcial)
+  }, [myCart])
+
+  const discount = 0.00
+  
+  const totalPriceFinal = totalPriceParcial.length ? totalPriceParcial.reduce((acumulator, currentValue) => {
+    return acumulator + currentValue
+  }) : 0.00
+
   return(
     <S.Container>
       <h1>Meu Carrinho</h1>
@@ -33,10 +48,10 @@ export const CartMainContent: React.FC = () => {
       </S.CardsCartContainer>
       <S.CartSideBar>
         <h2>Resumo do pedido</h2>
-        <span>Preço: R$78,00</span>
-        <span>Desconto: R$0,00</span>
+        <span>{`Preço: R$ ${totalPriceFinal.toFixed(2).toString().replace(".", ",")}`}</span>
+        <span>{`Desconto: R$ ${discount.toFixed(2).toString().replace(".", ",")}`}</span>
         <hr />
-        <span className="subTotal">Subtotal: R$78,00</span>
+        <span className="subTotal">{`Subtotal: R$ ${(totalPriceFinal - discount).toFixed(2)}`}</span>
         <Button>
           Finalizar Pedido
         </Button>
