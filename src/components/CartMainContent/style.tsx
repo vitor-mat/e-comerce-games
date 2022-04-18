@@ -32,11 +32,9 @@ export const CardsCartContainer = styled.div`
   grid-area: CardsCartContainer;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 40px;
-
-  @media(max-width: 450px){
-    align-items: center;
-  }
 `
 
 export const CartSideBar = styled.div`

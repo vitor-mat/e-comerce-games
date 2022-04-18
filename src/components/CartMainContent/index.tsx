@@ -47,21 +47,24 @@ export const CartMainContent: React.FC = () => {
     <S.Container>
       <h1>Meu Carrinho</h1>
       <S.CardsCartContainer>
-        {myCart.map((data, index) => {
-          return (
-            <React.Fragment
-              key={data.id}
-            >
-              <CartCard
-                imgSrc={data.imgSrc}
-                title={data.title}
-                price={data.price}
-                amount={data.amount}
-              />
-              <hr />
-            </React.Fragment>
-          )
-        })}
+        {showLoading ? 
+          <span className="processing-payment">Processando pagamento...</span> :
+          myCart.map((data, index) => {
+            return (
+              <React.Fragment
+                key={data.id}
+              >
+                <CartCard
+                  imgSrc={data.imgSrc}
+                  title={data.title}
+                  price={data.price}
+                  amount={data.amount}
+                />
+                <hr />
+              </React.Fragment>
+            )
+          })
+        }
       </S.CardsCartContainer>
       <S.CartSideBar>
         <h2>Resumo do pedido</h2>
