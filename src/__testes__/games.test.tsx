@@ -33,4 +33,11 @@ describe("adding products in the cart", () => {
     const addButton = screen.getByText("Adicionar ao carrinho")
     expect(addButton).toBeInTheDocument()
   })
+  test("button changes to 'Visualizar no carrinho' after click", async () => {
+    const { debug } = render(<MockGames />)
+    const addButton = screen.getByText("Adicionar ao carrinho")
+    userEvent.click(addButton)
+    const viewButton = screen.getByText("Visualizar no carrinho")
+    expect(viewButton).toBeInTheDocument()
+  })
 })

@@ -67,7 +67,7 @@ export const GamesPageMainContent: React.FC<PropsType> = ({ id, name, imgSrc, pl
               Adicionar ao carrinho
             </span>
             <Link href="/cart">
-              <a className="seeInTheCart">Vizualizar no carrinho</a>
+              <a className="seeInTheCart">Visualizar no carrinho</a>
             </Link>
             <LoadingIcon showLoading={showLoading} />
           </S.AddToCartButton>
