@@ -28,4 +28,9 @@ describe("adding products in the cart", () => {
     const title = screen.getByText("Terra Média: Sombras de Mordor")
     expect(title).toBeInTheDocument()
   })
+  test("button starts with 'Adicionar ao carrinho'", async () => {
+    const { debug } = render(<MockGames />)
+    const addButton = screen.getByText("Adicionar ao carrinho")
+    expect(addButton).toBeInTheDocument()
+  })
 })
