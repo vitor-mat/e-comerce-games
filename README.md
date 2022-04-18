@@ -1,4 +1,4 @@
-# E-comerce
+# E-comerce games
 
 Uma aplicação de e-comerce de jogos em next js.
 
