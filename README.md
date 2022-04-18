@@ -25,7 +25,8 @@ Uma aplicação de e-comerce de jogos em next js.
 - Quando existem items no carrinho aparece um número indicando a quantidade.
 - Usuário pode comprar mais de um item do mesmo produto.
 - Usuário pode adicionar e remover items do carrinho.
-- Aplicação responsiva;
+- Aplicação responsiva.
+- Página 404.
 
 ## Demonstração da Aplicação
 
