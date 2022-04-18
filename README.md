@@ -27,6 +27,7 @@ Uma aplicação de e-comerce de jogos em next js.
 - Usuário pode adicionar e remover items do carrinho.
 - Aplicação responsiva.
 - Página 404.
+- Página do carrinho muda se ele está vazio, com produtos ou quando finaliza um pedido.
 
 ## Demonstração da Aplicação
 
