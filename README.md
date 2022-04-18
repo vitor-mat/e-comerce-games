@@ -1,8 +1,43 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# E-comerce
 
-## Getting Started
+Uma aplicação de e-comerce de jogos em next js.
 
-First, run the development server:
+![NextJS](https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white) ![Redux](https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white) ![Styled-components](https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white)
+
+## SUMÁRIO
+
+- Status
+- Deploy
+- Features
+- Demonstração da Aplicação
+- Como Rodar a Aplicação
+- Pré Requisitos Para Rodar a Aplicação
+- Tecnologias utilizadas
+- Autor
+
+## Status
+
+✨Concluído ✨
+
+## Features
+
+- Jogos gerado dinãmicamente.
+- Quando existem items no carrinho aparece um número indicando a quantidade.
+- Usuário pode comprar mais de um item do mesmo produto.
+- Usuário pode adicionar e remover items do carrinho.
+- Aplicação responsiva;
+
+## Demonstração da Aplicação
+
+<img alt="todo list desktop image" src="./readme_files/e-comerce.gif"/>
+
+## Pré Requisitos Para Rodar a Aplicação
+
+Você precisa de um browser de internet (navegador) e ter o node instalado na sua máquina.
+
+## Como Rodar a Aplicação
+
+Primeiro, para rodar o servidor de desenvolvimento, abra a pasta do projeto no seu terminal e rodo um dos seguintes comandos:
 
 ```bash
 npm run dev
@@ -10,25 +45,19 @@ npm run dev
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abra em [http://localhost:3000](http://localhost:3000) para ver a resposta do servidor no navegador.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Tecnologias Utilizadas
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+- [Next](https://nextjs.org/docs)
+- [Redux](https://redux-toolkit.js.org/)
+- [Styled-components](https://styled-components.com/docs)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Autor
 
-## Learn More
+<img alt="author photo" src="./readme_files/vitor.jpg" width="250">
 
-To learn more about Next.js, take a look at the following resources:
+Feito por Vitor Mateus
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+[![instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/vitor_dev_/) [![linkeding](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/vitor-mateus-2a42461a2/)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
