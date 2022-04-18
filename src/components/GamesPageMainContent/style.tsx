@@ -53,17 +53,6 @@ export const AddToCartButton = styled(Button)<AddToCartButtonType>`
     opacity: .7;
   }
 
-  .loadIcon{
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    border-top: 4px solid white;
-    border-left: 4px solid white;
-    clip-path: polygon(0% 0%, 70% 0%, 70% 100%, 0% 100%);
-    animation: spin .5s linear infinite;
-    display: ${props => props.showLoading ? "block" : "none"};
-  }
-
   .addInTheCart, .seeInTheCart{
     align-items: center;
     justify-content: center;

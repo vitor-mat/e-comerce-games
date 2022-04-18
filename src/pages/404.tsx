@@ -4,7 +4,7 @@ import { FullScreenContainer } from '../components/DesignSystemElements/FullScre
 import { Header } from '../components/DesignSystemElements/Header';
 import { NavegationCart } from '../components/NavegationCart';
 import { Main } from '../components/DesignSystemElements/Main';
-import { MainConent404Page } from '../components/MainContent404Page';
+import { MainConent404Page } from '../components/Page404MainContent';
 import { Footer } from '../components/DesignSystemElements/Footer';
 
 const Cart: NextPage = () => {

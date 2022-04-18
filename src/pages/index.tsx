@@ -8,7 +8,7 @@ import { Header } from '../components/DesignSystemElements/Header';
 import { NavegationCart } from '../components/NavegationCart';
 import { Flex } from '../components/DesignSystemElements/Flex';
 import { Main } from '../components/DesignSystemElements/Main';
-import { Card } from '../components/DesignSystemElements/Card';
+import { Card } from '../components/CardsIndexPage';
 import { Footer } from '../components/DesignSystemElements/Footer';
 
 import dataGames from '../database/games.json';

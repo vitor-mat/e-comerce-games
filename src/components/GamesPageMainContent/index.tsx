@@ -9,6 +9,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { addInTheCart } from '../../features/cartScice/cartSclice';
 
 import { Flex } from '../DesignSystemElements/Flex';
+import { LoadingIcon } from '../LoadingIcon';
 
 interface PropsType{
   name: string;
@@ -68,7 +69,7 @@ export const GamesPageMainContent: React.FC<PropsType> = ({ id, name, imgSrc, pl
             <Link href="/cart">
               <a className="seeInTheCart">Vizualizar no carrinho</a>
             </Link>
-            <div className="loadIcon"></div>
+            <LoadingIcon showLoading={showLoading} />
           </S.AddToCartButton>
           <span>Preço: R${price.toFixed(2).toString().replace(".", ",")}</span>
           <hr />

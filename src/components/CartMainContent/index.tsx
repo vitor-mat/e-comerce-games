@@ -4,7 +4,7 @@ import { RootState } from '../../app/store';
 import { useSelector, useDispatch } from 'react-redux';
 import { clearAllCart } from '../../features/cartScice/cartSclice';
 
-import { LoadingElement } from '../LoadingIcon';
+import { LoadingIcon } from '../LoadingIcon';
 
 import { CartCard } from './CartCard';
 import { EmpytCart } from './EmptyCart';
@@ -71,7 +71,7 @@ export const CartMainContent: React.FC = () => {
         <span className="subTotal">{`Subtotal: R$ ${(totalPriceFinal - discount).toFixed(2)}`}</span>
         <S.FinishOrderButton onClick={handleLoading}>
           {showLoading ? 
-            <LoadingElement showLoading={showLoading} /> :
+            <LoadingIcon showLoading={showLoading} /> :
             <span>Finalizar Pedido</span>
           }
         </S.FinishOrderButton>

@@ -6,7 +6,7 @@ interface PropsType{
   showLoading: boolean;
 }
 
-export const LoadingElement: React.FC<PropsType> = ({showLoading}) => {
+export const LoadingIcon: React.FC<PropsType> = ({showLoading}) => {
   return(
     <S.LoadingIcon showLoading={showLoading}/>
   )
