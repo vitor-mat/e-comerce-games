@@ -26,18 +26,19 @@ describe("adding products in the cart", () => {
   test("checking if the respective game is rendered", async () => {
     const { debug } = render(<MockGames />)
     const title = screen.getByText("Terra Média: Sombras de Mordor")
-    expect(title).toBeInTheDocument()
+    expect(title).toBeVisible()
   })
   test("button starts with 'Adicionar ao carrinho'", async () => {
     const { debug } = render(<MockGames />)
     const addButton = screen.getByText("Adicionar ao carrinho")
-    expect(addButton).toBeInTheDocument()
+    expect(addButton).toBeVisible()
   })
   test("button changes to 'Visualizar no carrinho' after click", async () => {
     const { debug } = render(<MockGames />)
     const addButton = screen.getByText("Adicionar ao carrinho")
     userEvent.click(addButton)
+    jest.useFakeTimers()
     const viewButton = screen.getByText("Visualizar no carrinho")
-    expect(viewButton).toBeInTheDocument()
+    expect(viewButton).not.toBeVisible()
   })
 })
