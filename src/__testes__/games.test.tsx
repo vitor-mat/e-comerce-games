@@ -40,7 +40,7 @@ describe("adding products in the cart", () => {
     const loadingIcon = screen.getByTestId("loadingIcon")
     expect(loadingIcon).toBeVisible()
   })
-  test("button changes to 'Visualizar no carrinho' after click", async () => {
+  test("button changes to 'Visualizar no carrinho' after the loading animation is ended", async () => {
     jest.useFakeTimers()
     const { debug } = render(<MockGames />)
     const addToCartButtonWrapper = screen.getByTestId("addToCartButtonWrapper")
