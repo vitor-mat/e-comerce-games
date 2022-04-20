@@ -32,7 +32,6 @@ export const SideBar = styled.div`
 `
 
 interface AddToCartButtonType{
-  showLoading: boolean;
   isInTheCart: boolean;
 }
 
@@ -54,6 +53,7 @@ export const AddToCartButton = styled(Button)<AddToCartButtonType>`
   }
 
   .addInTheCart, .seeInTheCart{
+    display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
@@ -64,14 +64,9 @@ export const AddToCartButton = styled(Button)<AddToCartButtonType>`
     }
   }
 
-  .addInTheCart{
-    display: ${props => props.showLoading ? "none" : props.isInTheCart ? "none" : "flex"};
-  }
-
   .seeInTheCart{
     color: white;
     text-decoration: none;
-    display: ${props => props.showLoading ? "none" : props.isInTheCart ? "flex" : "none"};
   }
 
   @keyframes spin { 

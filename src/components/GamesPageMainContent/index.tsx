@@ -37,7 +37,7 @@ export const GamesPageMainContent: React.FC<PropsType> = ({ id, name, imgSrc, pl
         setShowLoading(false)
         setIsInTheCart(!isInTheCart)
         dispatch(addInTheCart(cartItem))
-      }, 4000)
+      }, 500)
     }
   }
 
@@ -59,17 +59,20 @@ export const GamesPageMainContent: React.FC<PropsType> = ({ id, name, imgSrc, pl
         <S.SideBar>
           <S.AddToCartButton
             margin="0 0 10px"
-            showLoading={showLoading}
-            isInTheCart={isInTheCart}
             onClick={handleLoading}
+            isInTheCart={isInTheCart}
+            data-testid="addToCartButtonWrapper"
           >
-            <span className="addInTheCart">
-              Adicionar ao carrinho
-            </span>
-            <Link href="/cart">
-              <a className="seeInTheCart">Visualizar no carrinho</a>
-            </Link>
-            <LoadingIcon showLoading={showLoading} />
+            {showLoading ? 
+              <LoadingIcon showLoading={showLoading} /> : 
+              !isInTheCart ?
+              <span className="addInTheCart">
+                Adicionar ao carrinho
+              </span> :
+              <Link href="/cart">
+                <a className="seeInTheCart">Visualizar no carrinho</a>
+              </Link>
+            }
           </S.AddToCartButton>
           <span>Preço: R${price.toFixed(2).toString().replace(".", ",")}</span>
           <hr />
