@@ -50,7 +50,7 @@ export const CartCard: React.FC<PropsType> = ({ imgSrc, title, price, amount }) 
   }
 
   return (
-    <S.Container>
+    <S.Container data-testid="cartCard">
       <S.TitleMobile>{title}</S.TitleMobile>
       <img src={imgSrc} alt="capa game" />
       <S.CardDescriptionContainer>
