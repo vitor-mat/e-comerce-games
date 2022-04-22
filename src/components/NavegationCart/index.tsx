@@ -17,7 +17,7 @@ export const NavegationCart = () => {
         <a>
           <span>Carrinho</span>
           <img src="/cart-icon-black.svg" alt="cart icon" />
-          {myCart.length ? <div className="numberOfItems">{myCart.length}</div> : ""}
+          {myCart.length ? <div className="numberOfItems" data-testId="numbeOfItemsInTheCart">{myCart.length}</div> : ""}
         </a>
       </Link>
     </S.Container>

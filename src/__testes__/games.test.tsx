@@ -3,7 +3,8 @@ import '@testing-library/jest-dom'
 import { render, screen, fireEvent } from '@testing-library/react'
 import userEvent from '@testing-library/user-event';
 
-import { store } from '../app/store';
+import { configureStore } from '@reduxjs/toolkit';
+import cartReducer from '../features/cartScice/cartSclice';
 import { Provider } from 'react-redux';
 
 import { ThemeProvider } from 'styled-components';
@@ -12,11 +13,26 @@ import { theme } from '../styles/theme';
 import Games from '../pages/games/[id]';
 
 
+function ClearReduxState(){
+
+
+  return(
+    <Games currentlyRouter="terra-media-sombras-de-mordor"/>
+  )
+}
+
 function MockGames() {
+
+  const store = configureStore({
+    reducer: {
+      cart: cartReducer
+    }
+  })
+
   return(
     <Provider store={store}>
       <ThemeProvider theme={theme}>
-        <Games currentlyRouter="terra-media-sombras-de-mordor"/>
+        <ClearReduxState />
       </ThemeProvider>
     </Provider>
   )
@@ -48,5 +64,10 @@ describe("adding products in the cart", () => {
     jest.runAllTimers()
     expect(addToCartButtonWrapper).toBeVisible()
     jest.useRealTimers()
+  })
+  test("cart icon start without number appear", () => {
+    const { debug } = render(<MockGames />)
+    const numbeOfItemsInTheCart = screen.queryByTestId("numbeOfItemsInTheCart")
+    expect(numbeOfItemsInTheCart).toBeNull()
   })
 })

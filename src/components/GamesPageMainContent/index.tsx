@@ -37,7 +37,7 @@ export const GamesPageMainContent: React.FC<PropsType> = ({ id, name, imgSrc, pl
         setShowLoading(false)
         setIsInTheCart(!isInTheCart)
         dispatch(addInTheCart(cartItem))
-      }, 500)
+      }, 4000)
     }
   }
 
