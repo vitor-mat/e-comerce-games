@@ -76,4 +76,18 @@ describe("user interaction whit cart page", () => {
     const cartCard = screen.getByTestId('cartCard')
     expect(cartCard).toBeInTheDocument()
   })
+  test('user can remove items from the cart', () => {
+    const gamesItens: cartItemTypes[] = [{
+      id: 0, 
+      imgSrc: '/call-of-duty-wwii.png' ,
+      title: 'call of duty', 
+      price: 10, 
+      amount: 1
+    }]
+    const { debug } = render(<MockCart cartItem={gamesItens} />)
+    const cartCard = screen.getByTestId('cartCard')
+    const removeItem = screen.getByText('Remover')
+    userEvent.click(removeItem)
+    expect(cartCard).not.toBeInTheDocument()
+  })
 })
