@@ -58,7 +58,7 @@ const MockCart: React.FC<MockCartType> = ({ cartItem = [] }) => {
   )
 }
 
-describe("user interaction whit cart page", () => {
+describe("user interaction whit cart page (cart items)", () => {
   test('if cart is empyt appear messsage for empyt cart', () => {
     const { debug } = render(<MockCart />)
     const empytCartMessage = screen.getByText("Seu carrinho está vazio.")
@@ -89,5 +89,11 @@ describe("user interaction whit cart page", () => {
     const removeItem = screen.getByText('Remover')
     userEvent.click(removeItem)
     expect(cartCard).not.toBeInTheDocument()
+  })
+})
+
+describe("user interaction whit cart page (order resume)", () => {
+  test("whatever", () => {
+    expect(1+1).toBe(2)
   })
 })
