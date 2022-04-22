@@ -1,6 +1,6 @@
 import React from 'react'
 import '@testing-library/jest-dom'
-import { render, screen, fireEvent } from '@testing-library/react'
+import { render, screen, waitFor, act } from '@testing-library/react'
 import userEvent from '@testing-library/user-event';
 
 import { configureStore } from '@reduxjs/toolkit';
@@ -49,10 +49,12 @@ describe("adding products in the cart", () => {
   })
   test("button changes to 'Visualizar no carrinho' after the loading animation is ended", async () => {
     jest.useFakeTimers()
-    const { debug } = render(<MockGames />)
+    await waitFor(() => render(<MockGames />))
     const addToCartButtonWrapper = screen.getByTestId("addToCartButtonWrapper")
-    userEvent.click(addToCartButtonWrapper)
-    jest.runAllTimers()
+    act(() => {
+      userEvent.click(addToCartButtonWrapper)
+      jest.runAllTimers()
+    })
     expect(addToCartButtonWrapper).toBeVisible()
     jest.useRealTimers()
   })
@@ -65,8 +67,10 @@ describe("adding products in the cart", () => {
     jest.useFakeTimers()
     const { debug } = render(<MockGames />)
     const addToCartButtonWrapper = screen.getByTestId("addToCartButtonWrapper")
-    userEvent.click(addToCartButtonWrapper)
-    jest.runAllTimers()
+    act(() => {
+      userEvent.click(addToCartButtonWrapper)
+      jest.runAllTimers()
+    })
     const numbeOfItemsInTheCart = screen.queryByTestId("numbeOfItemsInTheCart")
     expect(numbeOfItemsInTheCart).toBeVisible()
     jest.useRealTimers() 
