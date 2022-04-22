@@ -12,15 +12,6 @@ import { theme } from '../styles/theme';
 
 import Games from '../pages/games/[id]';
 
-
-function ClearReduxState(){
-
-
-  return(
-    <Games currentlyRouter="terra-media-sombras-de-mordor"/>
-  )
-}
-
 function MockGames() {
 
   const store = configureStore({
@@ -32,7 +23,7 @@ function MockGames() {
   return(
     <Provider store={store}>
       <ThemeProvider theme={theme}>
-        <ClearReduxState />
+        <Games currentlyRouter="terra-media-sombras-de-mordor"/>
       </ThemeProvider>
     </Provider>
   )
