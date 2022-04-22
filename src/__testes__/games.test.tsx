@@ -65,7 +65,7 @@ describe("adding products in the cart", () => {
     expect(addToCartButtonWrapper).toBeVisible()
     jest.useRealTimers()
   })
-  test("cart icon start without number appear", () => {
+  test("cart icon start whitout number appear", () => {
     const { debug } = render(<MockGames />)
     const numbeOfItemsInTheCart = screen.queryByTestId("numbeOfItemsInTheCart")
     expect(numbeOfItemsInTheCart).toBeNull()
