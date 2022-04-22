@@ -5,6 +5,7 @@ import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
 
 import Cart from '../pages/cart';
+import Games from '../pages/games/[id]';
 
 import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
@@ -24,12 +25,17 @@ const MockCart = () => {
   return(
     <Provider store={store}>
       <ThemeProvider theme={theme}>
+        <Games currentlyRouter="terra-media-sombras-de-mordor"/>
         <Cart />
       </ThemeProvider>
     </Provider>
   )
 }
 
-test('whatever', () => {
-  expect(1+1).toBe(2)
+describe("user interaction whit cart page", () => {
+  test('if cart is empyt appear messsage for empyt cart', () => {
+    const { debug } = render(<MockCart />)
+    const empytCartMessage = screen.getByText("Seu carrinho está vazio.")
+    expect(empytCartMessage).toBeInTheDocument()
+  })
 })
