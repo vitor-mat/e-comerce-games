@@ -91,7 +91,13 @@ describe("user interaction whit cart page (cart items)", () => {
 })
 
 describe("user interaction whit cart page (order resume)", () => {
-  test("whatever", () => {
-    expect(1+1).toBe(2)
+  test("exist one item in the cart and from begging the price show in order resume is the price of the game in the cart", () => {
+    const gamesItens: cartItemTypes[] = []
+    gamesItens.push(gameItem)
+    const { debug } = render(<MockCart cartItem={gamesItens} />)
+    const cartCard = screen.getByTestId('cartCard')
+    const removeItem = screen.getByText('Preço: R$ 10,00')
+    userEvent.click(removeItem)
+    expect(cartCard).toBeInTheDocument()
   })
 })
