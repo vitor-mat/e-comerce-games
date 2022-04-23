@@ -60,14 +60,13 @@ export const CartCard: React.FC<PropsType> = ({ imgSrc, title, price, amount }) 
         </S.HeaderCardDescription>
         <S.AmountContainer>
           <label>Qtd:</label>
-          <select value={selectValue} onChange={e => {
-            console.log(e.target.value)
+          <select value={selectValue} data-testid="selectAmountGamesItens" onChange={e => {
             setSelectValue(Number(e.target.value))
             updateAmoutItensOfAGame(title, Number(e.target.value))
           }}>
             {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((value, index) => {
               return (
-                <option key={index} value={value}>{value}</option>
+                <option key={value*Math.random()} value={value}>{value}</option>
               )
             })}
           </select>

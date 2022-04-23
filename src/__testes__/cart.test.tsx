@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { render, screen } from '@testing-library/react';
+import { render, screen, act } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
 
@@ -58,13 +58,20 @@ const MockCart: React.FC<MockCartType> = ({ cartItem = [] }) => {
   )
 }
 
-const gameItem = {
+const gameItem = [{
   id: 0, 
   imgSrc: '/call-of-duty-wwii.png' ,
   title: 'call of duty', 
   price: 10, 
   amount: 1
-}
+},
+{
+  id: 1, 
+  imgSrc: '/call-of-duty-wwii.png' ,
+  title: 'call of duty', 
+  price: 10, 
+  amount: 1
+}]
 
 describe("user interaction whit cart page (cart items)", () => {
   test('if cart is empyt appear messsage for empyt cart', () => {
@@ -74,14 +81,14 @@ describe("user interaction whit cart page (cart items)", () => {
   })
   test('show game card that exist in the cart', () => {
     const gamesItens: cartItemTypes[] = []
-    gamesItens.push(gameItem)
+    gamesItens.push(gameItem[0])
     const { debug } = render(<MockCart cartItem={gamesItens} />)
     const cartCard = screen.getByTestId('cartCard')
     expect(cartCard).toBeInTheDocument()
   })
   test('user can remove items from the cart', () => {
     const gamesItens: cartItemTypes[] = []
-    gamesItens.push(gameItem)
+    gamesItens.push(gameItem[0])
     const { debug } = render(<MockCart cartItem={gamesItens} />)
     const cartCard = screen.getByTestId('cartCard')
     const removeItem = screen.getByText('Remover')
@@ -93,9 +100,17 @@ describe("user interaction whit cart page (cart items)", () => {
 describe("user interaction whit cart page (order resume)", () => {
   test("exist one item in the cart and from begging the price show in order resume is the price of the game in the cart", () => {
     const gamesItens: cartItemTypes[] = []
-    gamesItens.push(gameItem)
+    gamesItens.push(gameItem[0])
     const { debug } = render(<MockCart cartItem={gamesItens} />)
     const priceFromOrder = screen.getByText('Preço: R$ 10,00')
+    expect(priceFromOrder).toBeInTheDocument()
+  })
+  test("if exist more than one item in the cart the price in order resume is the sum of the price of the items", () => {
+    const gamesItens: cartItemTypes[] = []
+    gamesItens.push(gameItem[0])
+    gamesItens.push(gameItem[1])
+    const { debug } = render(<MockCart cartItem={gamesItens} />)
+    const priceFromOrder = screen.getByText('Preço: R$ 20,00')
     expect(priceFromOrder).toBeInTheDocument()
   })
 })
