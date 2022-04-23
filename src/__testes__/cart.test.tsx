@@ -95,9 +95,7 @@ describe("user interaction whit cart page (order resume)", () => {
     const gamesItens: cartItemTypes[] = []
     gamesItens.push(gameItem)
     const { debug } = render(<MockCart cartItem={gamesItens} />)
-    const cartCard = screen.getByTestId('cartCard')
-    const removeItem = screen.getByText('Preço: R$ 10,00')
-    userEvent.click(removeItem)
-    expect(cartCard).toBeInTheDocument()
+    const priceFromOrder = screen.getByText('Preço: R$ 10,00')
+    expect(priceFromOrder).toBeInTheDocument()
   })
 })
