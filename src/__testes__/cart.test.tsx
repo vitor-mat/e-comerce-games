@@ -113,4 +113,13 @@ describe("user interaction whit cart page (order resume)", () => {
     const priceFromOrder = screen.getByText('Preço: R$ 20,00')
     expect(priceFromOrder).toBeInTheDocument()
   })
+  test("the change in the amount of one item change the final price ", () => {
+    const gamesItens: cartItemTypes[] = []
+    gamesItens.push(gameItem[0])
+    const { debug } = render(<MockCart cartItem={gamesItens} />)
+    const selectAmountGamesItens = screen.getByTestId("selectAmountGamesItens")
+    act(() => userEvent.selectOptions(selectAmountGamesItens, ['4']))
+    const priceFromOrder = screen.getByText('Preço: R$ 40,00')
+    expect(priceFromOrder).toBeInTheDocument()
+  })
 })
