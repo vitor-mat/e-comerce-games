@@ -58,6 +58,14 @@ const MockCart: React.FC<MockCartType> = ({ cartItem = [] }) => {
   )
 }
 
+const gameItem = {
+  id: 0, 
+  imgSrc: '/call-of-duty-wwii.png' ,
+  title: 'call of duty', 
+  price: 10, 
+  amount: 1
+}
+
 describe("user interaction whit cart page (cart items)", () => {
   test('if cart is empyt appear messsage for empyt cart', () => {
     const { debug } = render(<MockCart />)
@@ -65,25 +73,15 @@ describe("user interaction whit cart page (cart items)", () => {
     expect(empytCartMessage).toBeInTheDocument()
   })
   test('show game card that exist in the cart', () => {
-    const gamesItens: cartItemTypes[] = [{
-      id: 0, 
-      imgSrc: '/call-of-duty-wwii.png' ,
-      title: 'call of duty', 
-      price: 10, 
-      amount: 1
-    }]
+    const gamesItens: cartItemTypes[] = []
+    gamesItens.push(gameItem)
     const { debug } = render(<MockCart cartItem={gamesItens} />)
     const cartCard = screen.getByTestId('cartCard')
     expect(cartCard).toBeInTheDocument()
   })
   test('user can remove items from the cart', () => {
-    const gamesItens: cartItemTypes[] = [{
-      id: 0, 
-      imgSrc: '/call-of-duty-wwii.png' ,
-      title: 'call of duty', 
-      price: 10, 
-      amount: 1
-    }]
+    const gamesItens: cartItemTypes[] = []
+    gamesItens.push(gameItem)
     const { debug } = render(<MockCart cartItem={gamesItens} />)
     const cartCard = screen.getByTestId('cartCard')
     const removeItem = screen.getByText('Remover')
