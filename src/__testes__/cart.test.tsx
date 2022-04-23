@@ -122,4 +122,11 @@ describe("user interaction whit cart page (order resume)", () => {
     const priceFromOrder = screen.getByText('Preço: R$ 40,00')
     expect(priceFromOrder).toBeInTheDocument()
   })
+  test("button to finish order starts as finalizar pedido", () => {
+    const gamesItens: cartItemTypes[] = []
+    gamesItens.push(gameItem[0])
+    const { debug } = render(<MockCart cartItem={gamesItens} />)
+    const finishTheOrder = screen.getByText(/Finalizar Pedido/i)
+    expect(finishTheOrder).toBeInTheDocument()
+  })
 })
