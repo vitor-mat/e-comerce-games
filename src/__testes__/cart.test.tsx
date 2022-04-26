@@ -126,7 +126,7 @@ describe("user interaction whit cart page (order resume)", () => {
     const gamesItens: cartItemTypes[] = []
     gamesItens.push(gameItem[0])
     const { debug } = render(<MockCart cartItem={gamesItens} />)
-    const finishTheOrder = screen.getByText(/Finalizar Pedido/i)
+    const finishTheOrder = screen.getByText("Finalizar Pedido")
     expect(finishTheOrder).toBeInTheDocument()
   })
 })
