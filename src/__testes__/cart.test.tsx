@@ -152,4 +152,19 @@ describe("user interaction with cart page (finalizing order)", () => {
     const processingPayment = screen.getByText('Processando pagamento...')
     expect(processingPayment).toBeInTheDocument()
   })
+  test("After the payment processing appear on the screen a thanks message", () => {
+    jest.useFakeTimers()
+    const gamesItens: cartItemTypes[] = []
+    gamesItens.push(gameItem[0])
+    const { debug } = render(<MockCart cartItem={gamesItens} />)
+    const cartCard = screen.getByTestId('cartCard')
+    const finishTheOrder = screen.getByText("Finalizar Pedido")
+    act(() => {
+      userEvent.click(finishTheOrder)
+      jest.runAllTimers()
+    })
+    const thanksForBuying = screen.getByText("Obrigado por comprar!!")
+    expect(thanksForBuying).toBeVisible()
+    jest.useRealTimers()
+  })
 })
