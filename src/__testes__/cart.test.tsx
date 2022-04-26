@@ -141,4 +141,15 @@ describe("user interaction with cart page (finalizing order)", () => {
     const loadingIcon = screen.getByTestId("loadingIcon")
     expect(loadingIcon).toBeVisible()
   })
+  test("when the loading is ruing appear a message 'Processando pagamento...' either the cards", () => {
+    const gamesItens: cartItemTypes[] = []
+    gamesItens.push(gameItem[0])
+    const { debug } = render(<MockCart cartItem={gamesItens} />)
+    const cartCard = screen.getByTestId('cartCard')
+    const finishTheOrder = screen.getByText("Finalizar Pedido")
+    userEvent.click(finishTheOrder)
+    expect(cartCard).not.toBeInTheDocument()
+    const processingPayment = screen.getByText('Processando pagamento...')
+    expect(processingPayment).toBeInTheDocument()
+  })
 })
