@@ -97,7 +97,7 @@ describe("user interaction whit cart page (cart items)", () => {
   })
 })
 
-describe("user interaction whit cart page (order resume)", () => {
+describe("user interaction with cart page (order resume)", () => {
   test("exist one item in the cart and from begging the price show in order resume is the price of the game in the cart", () => {
     const gamesItens: cartItemTypes[] = []
     gamesItens.push(gameItem[0])
@@ -124,8 +124,21 @@ describe("user interaction whit cart page (order resume)", () => {
   })
 })
 
-describe("user interaction whit cart page (finalizing order)", () => {
-  test("some test", () => {
-    expect(1+1).toBe(2)
+describe("user interaction with cart page (finalizing order)", () => {
+  test("button to finish order starts as finalizar pedido", () => {
+    const gamesItens: cartItemTypes[] = []
+    gamesItens.push(gameItem[0])
+    const { debug } = render(<MockCart cartItem={gamesItens} />)
+    const finishTheOrder = screen.getByText("Finalizar Pedido")
+    expect(finishTheOrder).toBeInTheDocument()
+  })
+  test("after click in finalizar pedido button loading icon is showed", () => {
+    const gamesItens: cartItemTypes[] = []
+    gamesItens.push(gameItem[0])
+    const { debug } = render(<MockCart cartItem={gamesItens} />)
+    const finishTheOrder = screen.getByText("Finalizar Pedido")
+    userEvent.click(finishTheOrder)
+    const loadingIcon = screen.getByTestId("loadingIcon")
+    expect(loadingIcon).toBeVisible()
   })
 })
