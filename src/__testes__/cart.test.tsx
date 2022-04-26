@@ -130,3 +130,9 @@ describe("user interaction whit cart page (order resume)", () => {
     expect(finishTheOrder).toBeInTheDocument()
   })
 })
+
+describe("user interaction whit cart page (finalizing order)", () => {
+  test("some test", () => {
+    expect(1+1).toBe(2)
+  })
+})
